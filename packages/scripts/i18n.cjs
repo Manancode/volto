@@ -106,8 +106,8 @@ function getMessages() {
 function messagesToPot(messages) {
   return map(keys(messages).sort(), (key) =>
     [
-      `#. Default: "${messages[key].defaultMessage.trim()}"`,
       ...map(messages[key].filenames, (filename) => `#: ${filename}`),
+      `#. Default: "${messages[key].defaultMessage.trim()}"`,
       `msgid "${key}"`,
       'msgstr ""',
     ].join('\n'),
